@@ -45,4 +45,13 @@ public class ElementFinder {
         WebElement webE = driver.findElement(By.xpath(xpath));
         return webE;
     }
+    public WebElement linkTextFind(String linktext){
+        WebElement webE = driver.findElement(By.linkText(linktext));
+        return webE;
+    }
+    public ArrayList<WebElement> linkTextFinds(String linktext){
+        List<WebElement> webE = driver.findElements(By.linkText(linktext));
+        return (ArrayList<WebElement>) webE;
+    }
+
 }
