@@ -1,5 +1,4 @@
-import FindersandClickers.DriverSetup;
-import FindersandClickers.ElementFinder;
+import FindersandClickers.*;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -7,10 +6,14 @@ import org.openqa.selenium.interactions.Actions;
 import FindersandClickers.DriverSetup;
 import FindersandClickers.ElementFinder;
 
+import java.io.FileNotFoundException;
+
 public class Apartments {
     static WebDriver driver = DriverSetup.getDriver();
     static Actions act = new Actions(driver);
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
+        YAMLReader yr = new YAMLReader("test.yaml");
+        System.out.println(yr.read("venudvds"));
         ElementFinder ef = new ElementFinder(driver);
         driver.get("http://www.apartments.com");
         WebElement searchbar = ef.idFind("quickSearchLookup");
